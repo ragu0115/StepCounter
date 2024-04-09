@@ -1,26 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+type ValueProps = {
+  label: string;
+  value: string;
+}
+const Value = ({label,value}:ValueProps) => (
+  <View>
+          <Text style={styles.label}>{label}</Text>
+          <Text style={styles.value}>{value}</Text>
+        </View>
+)
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
 
-      <View style={{flexDirection: 'row'}}>
-        <View>
-          <Text style={styles.label}>Steps</Text>
-          <Text style={styles.value}>1000</Text>
-        </View>
-        <View>
-          <Text style={styles.label}>Distance</Text>
-          <Text style={styles.value}>1.0 KM</Text>
-        </View>
+      <View style={styles.values}>
+        <Value label = 'Steps' value= '1219'></Value>
+        <Value label = 'Distance' value='1.0 KM'></Value>
       </View>
 
-      <View>
-      <Text style={styles.label}>Flights Climbed</Text>
-      <Text style={styles.value}>0.8 KM</Text>
-      </View>
+      <Value label = 'Flights Climbed' value='0.8 KM'></Value>
 
       <StatusBar style="auto" />
     </View>
@@ -30,12 +32,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     justifyContent: 'center',
-    padding: 10,
+    padding: 12,
   },
-  label: {},
+  values:{
+    flexDirection: 'row', 
+    gap: 25,
+    flexWrap: 'wrap',
+  },
+  label: {
+    color: 'white',
+    fontSize: 20,
+  },
   value: {
-    fontSize: 35
+    fontSize: 45,
+    color: '#AFB3BE',
+    fontWeight: '500'
   },
 });
