@@ -3,12 +3,12 @@ import SVG, { Circle, CircleProps } from 'react-native-svg';
 
 type RingProgressProps = {
     radius?: number,
-    strokeWidth: 35,
+    strokeWidth?: number,
 };
 
 const color = '#EE0F55';
 
-const RingProgress = ({radius = 100, strokeWidth=20}:RingProgressProps) => {
+const RingProgress = ({radius = 100, strokeWidth=35}:RingProgressProps) => {
     const innerRadius = radius - strokeWidth / 2;
     const circumference = 2 * Math.PI * innerRadius;
     return (
