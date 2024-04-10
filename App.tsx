@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Value from './src/components/Value';
+import RingProgress from './src/components/RingProgress';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      
+      <RingProgress />
 
       <View style={styles.values}>
         <Value label = 'Steps' value= '1219'></Value>
@@ -30,5 +32,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     gap: 25,
     flexWrap: 'wrap',
+    marginTop: 50
   },
 });
